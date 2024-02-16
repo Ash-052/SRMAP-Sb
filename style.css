@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url('srmphoto.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    height:250px;
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.653); /* Adjust the alpha value as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+h1 {
+    color: rgb(1, 1, 1);
+    font-size: 30px;
+    font-family: Arial, sans-serif; 
+}
+
+.login-box {
+    margin-top: 20px;
+}
+
+.student-login,
+.employee-login {
+    display: block; /* Change the display to block */
+    width: 100%; /* Make the buttons full-width */
+    background-color: #57AA54;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.student-login h2,
+.employee-login h2 {
+    margin: 0;
+}
