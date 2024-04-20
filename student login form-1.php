@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include 'database.php';
+?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +65,7 @@
 <body>
   <div class="background-image">
     <div class="login-container">
-      <a href="select.html"><h2>Student Login</h2></a>
+      <a href="select.php"><h2>Student Login</h2></a>
       <form action="#" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>
@@ -72,11 +75,27 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" >
         </div>
-          <a href="select.html"><button type="submit">Login</button></a>
+          <a href="select.php"><button type="submit">Login</button></a>
+          <!-- <a href="registerstudent.php"><button>Register</button></a> -->
+          <a href="registerstudent.php"><h2>Register</h2></a>
       </form>
     </div>
   </div>
-      <script src="script.js"></script>
+  <?php
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM `student details` WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    if($row['username'] == $username && $row['password'] == $password){
+      echo "<script>alert('Login Successful')</script>";
+      header("Location: select.php");
+    } else {
+      echo "<script>alert('Login Failed')</script>";
+    }
+  }
+  ?>
 
 </body>
 </html>

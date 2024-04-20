@@ -91,7 +91,7 @@
     <label for="message">Description:</label>
     <textarea id="message" name="message" required></textarea>
 
-    <a href="Thankyoumessage.html" class="button">SUBMIT</a>    <!-- <a href="Thank you message.html"><input type="submit" value="Submit"></a> -->
+    <a href="Thankyoumessage.php" class="button">SUBMIT</a>    <!-- <a href="Thank you message.php"><input type="submit" value="Submit"></a> -->
 
   </form>
 </div>

@@ -32,8 +32,8 @@
   <div class="container" align="center">
     <h1>Thank You!</h1>
     <!-- <button onclick="window.addAnotherComplaint();"></button> -->
-    <a href="SuggestionForm.html"><button class="addAnotherComplaint">Add another Complaint</button></a>
-    <a href="index.html"><button class="logout">Log out</button></a> 
+    <a href="SuggestionForm.php"><button class="addAnotherComplaint">Add another Complaint</button></a>
+    <a href="index.php"><button class="logout">Log out</button></a> 
  
     <!-- <button onclick="window.logout();">Log Out</button> -->
   </div>

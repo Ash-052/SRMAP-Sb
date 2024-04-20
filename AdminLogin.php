@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+// Path: SRMAP-Sb/AdminLogin.php
+// Compare this snippet from SRMAP-Sb/adminlist.php:
+include 'database.php';
+?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,8 +67,8 @@
 <body>
   <div class="background-image">
     <div class="login-container">
-      <a href="select.html"><h2>Admin Login</h2></a>
-      <form action="#" method="POST">
+      <a href="select.php"><h2>Admin Login</h2></a>
+      <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" >
@@ -72,11 +77,55 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" >
         </div>
-          <a href="select.html"><button type="submit">Login</button></a>
+          <!-- <a href="select.php"> -->
+            <button type="submit">Login</button>
+          <!-- </a> -->
       </form>
     </div>
   </div>
       <script src="script.js"></script>
+      <!-- <?php
+
+      // if($_SERVER["REQUEST_METHOD"] == )
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $db_servername = "localhost";
+//     $db_user = "root";
+//     $db_password = ""; // Your database password
+//     $db_name = "login_credentials"; // Corrected database name
+    
+//     // Create connection
+//     $conn = new mysqli($db_servername, $db_user, $db_password, $db_name);
+
+//     // Check connection
+//     if ($conn->connect_error) {
+//         die("Connection failed: " . $conn->connect_error);
+//     }
+
+//     // Retrieve username and password from POST data
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
+
+//     // Query to check if the provided credentials exist
+//     $sql = "SELECT * FROM login_credentials WHERE username = ? AND password = ?";
+//     $stmt = $conn->prepare($sql);
+//     $stmt->bind_param("ss", $username, $password);
+//     $stmt->execute();
+//     $result = $stmt->get_result();
+
+//     // If a row is found, credentials are correct
+//     if ($result->num_rows == 1) {
+//         // Redirect to select.php
+//         header("Location: select.php");
+//         exit();
+//     } else {
+//         echo "Incorrect username or password";
+//     }
+
+//     $stmt->close();
+//     $conn->close();
+// }
+?> -->
+
 
 </body>
 </html>

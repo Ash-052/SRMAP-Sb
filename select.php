@@ -14,10 +14,10 @@
             <h1>SRM-AP Suggestion Box </h1>
             <div class="content-box">
                 <div class="options">
-                   <a href="SuggestionForm.html"><button class="new-complaint">New Suggestion</button></a> 
+                   <a href="SuggestionForm.php"><button class="new-complaint">New Suggestion</button></a> 
 
-                    <a href="SuggestionHistory.html"><button class="suggestion-history">Suggestion History</button></a>
-                    <a href="index.html"><button class="Logout">Log Out</button></a>
+                    <a href="SuggestionHistory.php"><button class="suggestion-history">Suggestion History</button></a>
+                    <a href="index.php"><button class="Logout">Log Out</button></a>
 
 
                 </div>

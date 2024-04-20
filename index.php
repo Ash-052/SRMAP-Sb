@@ -13,7 +13,7 @@
             <a href="student login form-1.php"><button class="student-login">Student Login</button></a>
 
             
-            <a href="loginoption.html"><button class="employee-login">Employee Login</button></a>
+            <a href="loginoption.php"><button class="employee-login">Employee Login</button></a>
         </div>
     </div>
 </body>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include 'database.php';
+?>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Login</title>
-  <style>
+<style>
     body, html {
       margin: 0;
       padding: 0;
@@ -62,21 +62,44 @@
 <body>
   <div class="background-image">
     <div class="login-container">
-      <a href="select.php"><h2>Staff Login</h2></a>
-      <form action="#" method="POST">
+      <a href="select.php"><h2>Student Register</h2></a>
+      <form action="registerstudent.php" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>
-          <input type="text" id="username" name="username" >
+          <input type="text" id="username" name="username">
         </div>
         <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" >
+          <input type="password" id="pass" name="pass">
         </div>
-          <a href="select.php"><button type="submit">Login</button></a>
+        <div class="form-group">
+          <label for="password">Registration Number:</label>
+          <input type="text" id="regid" name="regid">
+        </div>
+        <button type="submit">REGISTER</button>
       </form>
     </div>
   </div>
-      <script src="script.js"></script>
-
 </body>
 </html>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = $_POST['username'];
+  $password = $_POST['pass'];
+  $regid = $_POST['regid'];
+
+
+    if(empty($username) || empty($password) || empty($regid)){
+        echo "Please fill all the fields";
+    }
+    else{
+      $sql = "INSERT INTO `student details` (username, password, adno) VALUES ('$username', '$password', '$regid')";
+      mysqli_query($conn, $sql);
+      echo "New record created successfully";
+    }
+
+
+
+  }
+?>

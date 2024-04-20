@@ -23,7 +23,7 @@
     //   // Implement secure authentication mechanisms using hashing and salting.
     //   if (username == 'admin' && password == 'password') {
     
-    //     window.location.href = 'OptionofComplaint.html';
+    //     window.location.href = 'OptionofComplaint.php';
     //   } else {
     //     alert('Invalid username or password.');
     //   }
