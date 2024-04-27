@@ -84,47 +84,21 @@ include 'database.php';
     </div>
   </div>
       <script src="script.js"></script>
-      <!-- <?php
-
-      // if($_SERVER["REQUEST_METHOD"] == )
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     $db_servername = "localhost";
-//     $db_user = "root";
-//     $db_password = ""; // Your database password
-//     $db_name = "login_credentials"; // Corrected database name
-    
-//     // Create connection
-//     $conn = new mysqli($db_servername, $db_user, $db_password, $db_name);
-
-//     // Check connection
-//     if ($conn->connect_error) {
-//         die("Connection failed: " . $conn->connect_error);
-//     }
-
-//     // Retrieve username and password from POST data
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-
-//     // Query to check if the provided credentials exist
-//     $sql = "SELECT * FROM login_credentials WHERE username = ? AND password = ?";
-//     $stmt = $conn->prepare($sql);
-//     $stmt->bind_param("ss", $username, $password);
-//     $stmt->execute();
-//     $result = $stmt->get_result();
-
-//     // If a row is found, credentials are correct
-//     if ($result->num_rows == 1) {
-//         // Redirect to select.php
-//         header("Location: select.php");
-//         exit();
-//     } else {
-//         echo "Incorrect username or password";
-//     }
-
-//     $stmt->close();
-//     $conn->close();
-// }
-?> -->
+      <?php
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $userid = $_POST['username'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM `admin_details` WHERE userid='$userid' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    if($row['userid'] == $userid && $row['password'] == $password){
+      echo "<script>alert('Login Successful')</script>";
+      header("Location: adminlist.php");
+    } else {
+      echo "<script>alert('Login Failed')</script>";
+    }
+  }
+  ?> 
 
 
 </body>

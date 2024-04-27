@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Login</h1>
         <div class="login-box">
-            <a href="student login form-1.php"><button class="student-login">Student Login</button></a>
+            <a href="studentloginform.php"><button class="student-login">Student Login</button></a>
 
             
             <a href="loginoption.php"><button class="employee-login">Employee Login</button></a>

@@ -62,7 +62,7 @@ include 'database.php';
 <body>
   <div class="background-image">
     <div class="login-container">
-      <a href="select.php"><h2>Student Register</h2></a>
+      <h1>Student Register</h1> 
       <form action="registerstudent.php" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>
@@ -76,10 +76,39 @@ include 'database.php';
           <label for="password">Registration Number:</label>
           <input type="text" id="regid" name="regid">
         </div>
-        <button type="submit">REGISTER</button>
+        <a href="afterregmssg.php"><button class="new-complaint">Register</button></a> 
       </form>
     </div>
   </div>
+  <script >
+    //check if the password is 8 characters long and has atleast 1 number
+    // check username is not empty
+    // check regid is not empty
+    // check if the regid is 9 characters long
+    // if all the above conditions are satisfied then only submit the form
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('pass').value;
+      const regid = document.getElementById('regid').value;
+      if (username === '' || password === '' || regid === '') {
+        e.preventDefault();
+        alert('Please fill all the fields');
+      }
+      if (regid.length !== 9) {
+        e.preventDefault();
+        alert('Registration number should be 9 characters long');
+      }
+      if (password.length < 8) {
+        e.preventDefault();
+        alert('Password should be atleast 8 characters long');
+      }
+      if (!/\d/.test(password)) {
+        e.preventDefault();
+        alert('Password should contain atleast 1 number');
+      }
+    });
+  </script>
 </body>
 </html>
 
