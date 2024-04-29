@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <?php
+    include 'database.php';
+  ?>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,10 +78,10 @@
 
 <div class="container">
   <h2>Suggestion Form</h2>
-  <form action="#" method="post">
+  <form action="SuggestionForm.php" method="post">
     
     <label>Category:</label>
-    <select type="text" name="suggestion category" id="suggestion category" required>  
+    <select name="suggestioncategory" id="suggestion category" required>  
       <option value="itkm">ITKM</option> 
       <option value="clm">CLM</option> 
       <option value="crcs">CRCS</option> 
@@ -85,16 +89,52 @@
       <option value="academic">Academic Affairs</option>
     </select>
 
-    <label for="subject">Sub Category:</label>
+    <label for="subject">Subject:</label>
     <input type="text" id="subject" name="subject" required>
 
     <label for="message">Description:</label>
     <textarea id="message" name="message" required></textarea>
 
-    <a href="Thankyoumessage.php" class="button">SUBMIT</a>    <!-- <a href="Thank you message.php"><input type="submit" value="Submit"></a> -->
+    <input type="submit" value="Submit">
 
   </form>
 </div>
+<?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $category = $_POST['suggestioncategory'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $sql = "INSERT INTO suggestion (category, subject, message) VALUES ('$category', '$subject', '$message')";
+
+    if ($conn->query($sql) === TRUE) {
+      header("Location: Thankyoumessage.php");
+        exit(); 
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  }
+?>  
+    <?php
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //     $category = $_POST['suggestion category'];
+    //     $subject = $_POST['subject'];
+    //     $message = $_POST['message'];
+
+    //     $sql = "INSERT INTO suggestion (category, subject, message) VALUES (?, ?, ?)";
+    //     $stmt = $conn->prepare($sql);
+    //     $stmt->bind_param("sss", $category, $subject, $message);
+
+    //     if ($stmt->execute()) {
+    //         echo "<script>alert('Thank you for your suggestion!');</script>";
+    //     } else {
+    //         echo "Error: " . $sql . "<br>" . $conn->error;
+    //     }
+
+    //     $stmt->close();
+    //     $conn->close();
+    // }
+    ?>
 
 </body>
 </html>
