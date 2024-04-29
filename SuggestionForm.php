@@ -79,7 +79,9 @@
 <div class="container">
   <h2>Suggestion Form</h2>
   <form action="SuggestionForm.php" method="post">
-    
+  <label for="Name">Name:</label>
+    <input type="text" id="Name" name="name" required>
+
     <label>Category:</label>
     <select name="suggestioncategory" id="suggestion category" required>  
       <option value="itkm">ITKM</option> 
@@ -88,6 +90,7 @@
       <option value="irhs">IR & HS</option>  
       <option value="academic">Academic Affairs</option>
     </select>
+    
 
     <label for="subject">Subject:</label>
     <input type="text" id="subject" name="subject" required>
@@ -101,11 +104,12 @@
 </div>
 <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
     $category = $_POST['suggestioncategory'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $sql = "INSERT INTO suggestion (category, subject, message) VALUES ('$category', '$subject', '$message')";
+    $sql = "INSERT INTO suggestion1 (Name ,category, subject, message) VALUES ('$name' , '$category', '$subject', '$message')";
 
     if ($conn->query($sql) === TRUE) {
       header("Location: Thankyoumessage.php");
@@ -116,24 +120,7 @@
   }
 ?>  
     <?php
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     $category = $_POST['suggestion category'];
-    //     $subject = $_POST['subject'];
-    //     $message = $_POST['message'];
-
-    //     $sql = "INSERT INTO suggestion (category, subject, message) VALUES (?, ?, ?)";
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bind_param("sss", $category, $subject, $message);
-
-    //     if ($stmt->execute()) {
-    //         echo "<script>alert('Thank you for your suggestion!');</script>";
-    //     } else {
-    //         echo "Error: " . $sql . "<br>" . $conn->error;
-    //     }
-
-    //     $stmt->close();
-    //     $conn->close();
-    // }
+    
     ?>
 
 </body>

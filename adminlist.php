@@ -55,11 +55,11 @@
     }
 
     .cell:first-child {
-      width: 8.33%; /* ID column width */
+      width: 5%; /* ID column width */
     }
 
     .cell:nth-child(2) {
-      width: 16.66%; /* Category column width */
+      width: 30%; /* Category column width */
     }
 
     .actions {
@@ -81,6 +81,7 @@
   <div class="table">
     <div class="row header">
       <!-- <div class="cell">ID</div> -->
+      <div class="cell">Name</div>
       <div class="cell">Category</div>
       <div class="cell">Subject</div>
       <div class="cell">Description</div>
@@ -93,7 +94,7 @@
 include 'database.php';
 
 // Fetch data from the suggestion table
-$sql = "SELECT * FROM suggestion";
+$sql = "SELECT * FROM suggestion1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -101,6 +102,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo '<div class="row">';
         // echo '<div class="cell">' . $row["id"] . '</div>'; // Uncomment this line if you want to display the ID column
+        echo '<div class="cell">' . $row["Name"] . '</div>';
         echo '<div class="cell">' . $row["category"] . '</div>';
         echo '<div class="cell">' . $row["subject"] . '</div>';
         echo '<div class="cell">' . $row["message"] . '</div>';
