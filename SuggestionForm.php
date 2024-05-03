@@ -79,7 +79,7 @@
 <div class="container">
   <h2>Suggestion Form</h2>
   <form action="SuggestionForm.php" method="post">
-  <label for="Name">Name:</label>
+  <label for="Name">Name :<i>(Your Wish , enter name only if you want to disclose)</i></label>
     <input type="text" id="Name" name="name" required>
 
     <label>Category:</label>

@@ -67,7 +67,7 @@ include 'database.php';
 <body>
   <div class="background-image">
     <div class="login-container">
-      <a href="select.php"><h2>Admin Login</h2></a>
+      <h2>Admin Login</h2>
       <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>

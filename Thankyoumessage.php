@@ -17,7 +17,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 400px; 
-      height: 200px; 
+      height: 270px; 
       padding: 20px; 
       background-color: rgba(255, 255, 255, 0.8); 
       border-radius: 10px; 
@@ -25,6 +25,26 @@
     }
     .container h1 {
       font-size: 46px; 
+    }
+    .addAnotherComplaint {
+      display: block; /* Change the display to block */
+    width: 100%; /* Make the buttons full-width */
+    background-color: #57AA54;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    }
+    .logout{
+      display: block; /* Change the display to block */
+    width: 100%; /* Make the buttons full-width */
+    background-color: #57AA54;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
     }
   </style>
 </head>

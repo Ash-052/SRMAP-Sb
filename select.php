@@ -16,8 +16,9 @@
                 <div class="options">
                    <a href="SuggestionForm.php"><button class="new-complaint">New Suggestion</button></a> 
 
-                    <a href="SuggestionHistory.php"><button class="suggestion-history">Suggestion History</button></a>
+                    <!-- <a href="SuggestionHistory.php"><button class="suggestion-history">Suggestion History</button></a> -->
                     <a href="index.php"><button class="Logout">Log Out</button></a>
+                    <a href = ""><button class = "Logout">Contact the Developers</button> </a>
 
 
                 </div>

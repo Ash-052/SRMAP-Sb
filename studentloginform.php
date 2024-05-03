@@ -65,7 +65,7 @@ include 'database.php';
 <body>
   <div class="background-image">
     <div class="login-container">
-      <a href="select.php"><h2>Student Login</h2></a>
+      <h2>Student Login</h2>
       <form action="#" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>
