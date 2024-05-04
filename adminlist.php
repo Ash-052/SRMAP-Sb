@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="container">
 
         <h1>Admin List</h1>
-        <button class="logout-btn" id="logout-btn">Logout</button>
+        <a href="index.php"><button class="logout-btn" id="logout-btn">Logout</button></a>
 
         <div class="table">
             <div class="row header">

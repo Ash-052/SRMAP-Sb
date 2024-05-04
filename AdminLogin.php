@@ -93,7 +93,7 @@ include 'database.php';
     $row = mysqli_fetch_array($result);
     if($row['userid'] == $userid && $row['password'] == $password){
       echo "<script>alert('Login Successful')</script>";
-      header("Location: adminlist.php");
+      header("Location: adminoption.php");
     } else {
       echo "<script>alert('Login Failed')</script>";
     }
