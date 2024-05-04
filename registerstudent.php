@@ -125,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else{
       $sql = "INSERT INTO `student details` (username, password, adno) VALUES ('$username', '$password', '$regid')";
       mysqli_query($conn, $sql);
+      header("Location: afterregmssg.php");
       echo "New record created successfully";
     }
 
