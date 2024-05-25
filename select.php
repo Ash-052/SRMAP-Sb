@@ -18,7 +18,7 @@
 
                     <!-- <a href="SuggestionHistory.php"><button class="suggestion-history">Suggestion History</button></a> -->
                     <a href="index.php"><button class="Logout">Log Out</button></a>
-                    <a href = ""><button class = "Logout">Contact the Developers</button> </a>
+                    <a href = "mailto:dhanushvemulapalli717@gmail.com "><button class = "Logout">Contact the Developers</button> </a>
 
 
                 </div>
